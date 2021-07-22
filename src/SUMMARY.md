@@ -10,7 +10,7 @@
 - [Development](./development/development.md)
 	- [Git](./development/git.md)
 	- [Docker](./development/docker.md)
-	- [Mariadb](./development/mariadb)
+	- [Mariadb](./development/mariadb.md)
 - [Paper Work](./paper/paper-work.md)
 	- [LaTex](./paper/latex.md)
 	- [Summary](./paper/summary.md)
