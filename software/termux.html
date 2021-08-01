@@ -146,6 +146,44 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="termux"><a class="header" href="#termux">termux</a></h1>
+<ul>
+<li>
+<p>换源</p>
+<ul>
+<li>不建议手动更改源列表，可以采用 <code>termux-change-repo</code> 这个官方工具</li>
+</ul>
+</li>
+<li>
+<p>添加额外按键</p>
+<pre><code class="language-bash">~/.termux/termux.properties # 设置文件
+
+extra-keys = [['ESC','/','-','HOME','UP','END','PGUP'],['TAB','CTRL','ALT','LEFT','DOWN','RIGHT','PGDN']] # 加入这行
+</code></pre>
+</li>
+<li>
+<p>安装 Arch</p>
+<ul>
+<li><code>proot-distro</code> 这个官方包非常好用
+<pre><code class="language-bash">proot-distro install archlinux # 安装
+proot-distro login archlinux # 进入
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>个性化</p>
+<ul>
+<li>主要是终端配色和命令提示符</li>
+<li>直接 fish 一把梭，注意 <code>fish_config</code> 的 web ui 依赖 python，所以需要先安装 python</li>
+</ul>
+</li>
+<li>
+<p>SSH</p>
+<ul>
+<li>注意 termux ssh 的监听端口默认为 8022 而不是 22</li>
+</ul>
+</li>
+</ul>
 
                     </main>
 
