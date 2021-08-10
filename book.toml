@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 [book]
 authors = ["千玄子"]
 language = "en"
@@ -8,7 +7,7 @@ title = "个人笔记"
 
 [output.html]
 mathjax-support = true
-=======
+
 [book]
 authors = ["千玄子"]
 language = "en"
@@ -18,4 +17,3 @@ title = "Scattered-Notes"
 
 [output.html]
 mathjax-support = true
->>>>>>> 98958962e6a863b7ca37f0f13178344f6f35d63e

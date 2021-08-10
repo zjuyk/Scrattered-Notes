@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # 关于
 
 首先我的昵称是千玄子，建议你这么称呼我（这是我中二时期给自己取的道号）
@@ -9,7 +8,7 @@
 
 - GPG: [B3A9 251F BEA2 1298 B80B 7F9E F84D 36A7 3BF3 9DC8](https://github.com/zjuyk.gpg)
 - 邮箱: [Edu](mailto:zjuyk@zju.edu.cn) | [Gmail](mailto:ownbyzjuyk@gmail.com)
-=======
+
 # 关于
 
 首先我的昵称是千玄子，建议你这么称呼我（这是我中二时期给自己取的道号）
@@ -20,5 +19,4 @@
 
 - GPG: [B3A9 251F BEA2 1298 B80B 7F9E F84D 36A7 3BF3 9DC8](https://github.com/zjuyk.gpg)
 - 邮箱: [Edu](mailto:zjuyk@zju.edu.cn) | [Gmail](mailto:ownbyzjuyk@gmail.com)
->>>>>>> 98958962e6a863b7ca37f0f13178344f6f35d63e
 - Telegram: [@zjuyk](https://t.m/zjuyk)
