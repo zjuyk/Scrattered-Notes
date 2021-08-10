@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Bash - 个人笔记</title>
+        <title>Bash - Scattered-Notes</title>
                 
 
         <!-- Custom HTML head -->
@@ -113,7 +113,7 @@
                         </button>
                                             </div>
 
-                    <h1 class="menu-title">个人笔记</h1>
+                    <h1 class="menu-title">Scattered-Notes</h1>
 
                     <div class="right-buttons">
                                                 <a href="../print.html" title="Print this book" aria-label="Print this book">
@@ -146,6 +146,14 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="bash"><a class="header" href="#bash">Bash</a></h1>
+<p>要用好 Linux，不会 bash 是不行的。</p>
+<h2 id="注意点"><a class="header" href="#注意点">注意点</a></h2>
+<h3 id="四则运算"><a class="header" href="#四则运算">四则运算</a></h3>
+<p>使用 <code>$(())</code> 来计算，注意涉及到不同进制的四则运算可以这样</p>
+<pre><code class="language-bash"># 5+0xa+0b1010
+echo $((5+16#a+2#1010))
+</code></pre>
+<h2 id="功能代码片段"><a class="header" href="#功能代码片段">功能代码片段</a></h2>
 
                     </main>
 

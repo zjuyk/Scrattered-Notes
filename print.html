@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>个人笔记</title>
+        <title>Scattered-Notes</title>
                 <meta name="robots" content="noindex" />
                 
 
@@ -114,7 +114,7 @@
                         </button>
                                             </div>
 
-                    <h1 class="menu-title">个人笔记</h1>
+                    <h1 class="menu-title">Scattered-Notes</h1>
 
                     <div class="right-buttons">
                                                 <a href="print.html" title="Print this book" aria-label="Print this book">
@@ -159,7 +159,8 @@
 <p>我需要时间来归纳知识，大纲里的内容都是我想分享出来的，有部分是之前有写过但我想重新润色一下，也有一部分是我正在学的。因为我之前的记录本身就存在的零散的特点，所以需要一段时间来整理。</p>
 <h2 id="为什么你写好的东西还是有些散碎呢"><a class="header" href="#为什么你写好的东西还是有些散碎呢">为什么你写好的东西还是有些散碎呢？</a></h2>
 <p>我不是打算构筑一个学习文档给大家看，我只是记录我遇到的问题和觉得应该重视的内容，例如 Programming Language 章节就只会写一些很容易错误的点或者一些很巧妙的语法糖。</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="programming-languages"><a class="header" href="#programming-languages">Programming Languages</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="编程语言"><a class="header" href="#编程语言">编程语言</a></h1>
+<p>在这个章节我会记录一些和程序语言相关的内容</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="rust"><a class="header" href="#rust">Rust</a></h1>
 <p>Rust 语言由 Mozilla 开发，最早发布于 2014 年 9 月。Rust 的编译器是在 MIT License 和 Apache License 2.0 双重协议声明下的免费开源软件。</p>
 <h2 id="优点"><a class="header" href="#优点">优点</a></h2>
@@ -186,7 +187,129 @@
 </ul>
 <p>《rust by example》会比官方的 TRPL 简单一些，强烈建议看一看</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="python"><a class="header" href="#python">Python</a></h1>
+<p>Python 是一个很好用的语言，拥有很多好用的库，对新手友好。</p>
+<hr />
+<h2 id="pip"><a class="header" href="#pip">pip</a></h2>
+<p>pip 是 python 的包管理器，属于勉强能用的水平，如果你在 linux 上，不建议用它，尤其是不要做 sudo pip 这样的操作，容易和本身的包管理器打架。</p>
+<h3 id="设置国内镜像"><a class="header" href="#设置国内镜像">设置国内镜像</a></h3>
+<p>临时使用，以阿里云举例</p>
+<pre><code class="language-bash">pip install -i https://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
+</code></pre>
+<p>永久配置</p>
+<pre><code class="language-bash"># Linux
+mkdir -p ~/.pip
+echo &quot;&quot;&quot;
+[global]
+index-url = http://mirrors.aliyun.com/pypi/simple/
+[install]
+trusted-host=mirrors.aliyun.com
+&quot;&quot;&quot; &gt; ~/.pip/pip.conf
+</code></pre>
+<pre><code class="language-powershell"># Windows: C:\Users\username\pip\pip.ini
+[global]
+index-url = http://mirrors.aliyun.com/pypi/simple/
+[install]
+trusted-host=mirrors.aliyun.com
+</code></pre>
+<h2 id="venv"><a class="header" href="#venv">venv</a></h2>
+<p>写大工程要隔离这是必须要注意的操作，虚拟环境保证了版本的正常维护</p>
+<pre><code class="language-python">python -m venv /path/to/new/virtual/environment
+</code></pre>
+<h2 id="注意点"><a class="header" href="#注意点">注意点</a></h2>
+<h3 id="in"><a class="header" href="#in">in</a></h3>
+<p>如果涉及的数据很多，一定要用 set，因为 set 的 in 操作是 O(1) 的，用 list 是 O(n) 速度太慢</p>
+<h3 id="pow"><a class="header" href="#pow">pow</a></h3>
+<p>注意内置的 pow 和 math 库里的 pow 接收的参数是不一样的，前者可以接受 3 个参数</p>
+<h2 id="小片段功能代码"><a class="header" href="#小片段功能代码">小片段功能代码</a></h2>
+<ul>
+<li>生成固定长度随机字符串密码</li>
+</ul>
+<pre><code class="language-python">import random
+import string
+def random_str(length=8):
+    return &quot;&quot;.join(random.sample(string.ascii_letters, length))
+</code></pre>
+<pre><code class="language-python">from random import Random
+def random_str(randomlength=8):
+    str = ''
+    chars = 'AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789'
+    length = len(chars) - 1
+    random = Random()
+    for i in range(randomlength):
+        str+=chars[random.randint(0, length)]
+    return str
+</code></pre>
+<ul>
+<li>二进制字符串转普通字符串</li>
+</ul>
+<p>每 8 个分成一组，用 int 转 10 进制，再用 chr 转为 ascii 字符</p>
+<pre><code class="language-python">s=&quot;0110001101111001&quot;
+ans=&quot;&quot;
+for i in range(0,len(s)//8):
+    x = s[i*8:i*8+8]
+    ans+=chr(int(x,2))
+</code></pre>
+<p>利用 binascii，先用 int 转为 10 进制，然后转为 16 进制字符串，调用 unhexlify 执行翻译</p>
+<pre><code class="language-python">import binascii
+s=&quot;0110001101111001&quot;
+ans=binascii.unhexlify('%x'%int(s,2)).decode()
+</code></pre>
+<ul>
+<li>符号数与无符号数转换</li>
+</ul>
+<p>无符号 -&gt; 有符号</p>
+<pre><code class="language-python">import ctypes
+ctypes.c_int64(17039472050328044269).value
+</code></pre>
+<p>有符号 -&gt; 无符号</p>
+<pre><code class="language-python">import ctypes
+ctypes.c_uint64(-1407272023381507347).value
+</code></pre>
+<ul>
+<li>捕捉输入的 Ctrl+C</li>
+</ul>
+<p>很邪恶的屏蔽用户输入 Ctrl+C 的做法</p>
+<pre><code class="language-python">import signal
+
+def signal_handler(signum,data):
+    if signum == signal.SIGINT:
+        print(&quot;Ctrl+C is pressed!&quot;)
+        # raise KeyboardInterrupt
+
+if __name__ == '__main__':
+    signal.signal(signal.SIGINT, signal_handler)
+    sleep(666)
+</code></pre>
+<ul>
+<li>AES 加密字符串</li>
+</ul>
+<p>加密</p>
+<pre><code class="language-python">plaintext = &quot;hello world&quot;
+
+import pyaes,base64
+aes = pyaes.AESModeOfOperationCTR(b&quot;This_key_for_demo_purposes_only!&quot;)
+encrypted_text = base64.b64encode(aes.encrypt(plaintext.encode(&quot;utf-8&quot;)))
+
+print(encrypted_text) # ipkEJevbnsfbEm4=
+</code></pre>
+<p>解密</p>
+<pre><code class="language-python">encrypted_text = &quot;ipkEJevbnsfbEm4=&quot;
+
+import pyaes, base64
+aes = pyaes.AESModeOfOperationCTR(b&quot;This_key_for_demo_purposes_only!&quot;)
+plaintext = aes.decrypt(base64.b64decode(encrypted_text)).decode()
+
+print(plaintext) # hello world
+</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="bash"><a class="header" href="#bash">Bash</a></h1>
+<p>要用好 Linux，不会 bash 是不行的。</p>
+<h2 id="注意点-1"><a class="header" href="#注意点-1">注意点</a></h2>
+<h3 id="四则运算"><a class="header" href="#四则运算">四则运算</a></h3>
+<p>使用 <code>$(())</code> 来计算，注意涉及到不同进制的四则运算可以这样</p>
+<pre><code class="language-bash"># 5+0xa+0b1010
+echo $((5+16#a+2#1010))
+</code></pre>
+<h2 id="功能代码片段"><a class="header" href="#功能代码片段">功能代码片段</a></h2>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="c"><a class="header" href="#c">C</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="cpp"><a class="header" href="#cpp">Cpp</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="development"><a class="header" href="#development">Development</a></h1>
@@ -243,7 +366,8 @@ proot-distro login archlinux # 进入
 </ul>
 </li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="templates"><a class="header" href="#templates">Templates</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="一些模板"><a class="header" href="#一些模板">一些模板</a></h1>
+<p>这里记录一些我常用的模板，主要是代码和写作相关的东西</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="muilty-thread"><a class="header" href="#muilty-thread">Muilty Thread</a></h1>
 <pre><code class="language-python">import threading
 from time import sleep
@@ -287,7 +411,7 @@ print(&quot;END&quot;)
 <div style="break-before: page; page-break-before: always;"></div><h1 id="rights"><a class="header" href="#rights">Rights</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="关于"><a class="header" href="#关于">关于</a></h1>
 <p>首先我的昵称是千玄子，建议你这么称呼我（这是我中二时期给自己取的道号）</p>
-<p><strong>如果你发现我公开的笔记有哪些地方错了或者过时了，请通过下面的联系方式通知我，我会尽快去改正！</strong></p>
+<p><strong>如果你发现我公开的笔记有那些地方错了或者过时了，请通过下面的联系方式通知我，我会尽快去改正！</strong></p>
 <p>联系方式：</p>
 <ul>
 <li>GPG: <a href="https://github.com/zjuyk.gpg">B3A9 251F BEA2 1298 B80B 7F9E F84D 36A7 3BF3 9DC8</a></li>
