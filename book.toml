@@ -3,7 +3,7 @@ authors = ["千玄子"]
 language = "en"
 multilingual = false
 src = "src"
-title = "Scattered-Notes"
+title = "个人笔记"
 
 [output.html]
 mathjax-support = true
