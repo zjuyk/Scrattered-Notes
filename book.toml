@@ -7,13 +7,3 @@ title = "个人笔记"
 
 [output.html]
 mathjax-support = true
-
-[book]
-authors = ["千玄子"]
-language = "en"
-multilingual = false
-src = "src"
-title = "Scattered-Notes"
-
-[output.html]
-mathjax-support = true
