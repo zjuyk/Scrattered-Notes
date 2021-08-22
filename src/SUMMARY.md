@@ -32,4 +32,7 @@
 	- [Thoughts](./writing-thinking/think/think.md)
 		- [Law](./writing-thinking/think/law.md)
 		- [Rights](./writing-thinking/think/women-rights.md)
+- [Addition skills](./addition-skill/index.md)
+	- [photography](./addition-skill/photography.md)
+	- [video clips](./addition-skill/video-clip.md)
 - [About](./about.md)
