@@ -29,7 +29,7 @@
 		- [书籍](./writing-thinking/read/book.md)
 		- [电影](./writing-thinking/read/films.md)
 		- [电视剧](./writing-thinking/read/tv.md)
-	- [奇思妙想](./writing-thinking/think/think.md)
+	- [胡思乱想](./writing-thinking/think/think.md)
 		- [情法理](./writing-thinking/think/law.md)
 		- [女权](./writing-thinking/think/women-rights.md)
 - [额外技能](./addition-skill/index.md)
