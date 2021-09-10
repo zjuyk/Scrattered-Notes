@@ -19,7 +19,6 @@
 - [软件技巧](./software/tips.md)
 	- [fish](./software/fish.md)
 	- [chezmoi](./software/chezmoi.md)
-	- [spacevim](./software/spacevim.md)
 	- [mpv](./software/mpv.md)
 	- [termux](./software/termux.md)
 - [程序模板](./template/templates.md)
