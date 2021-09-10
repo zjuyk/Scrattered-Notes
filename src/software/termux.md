@@ -23,8 +23,12 @@
 - 个性化
 
     - 主要是终端配色和命令提示符
-    - 直接 fish 一把梭，注意 `fish_config` 的 web ui 依赖 python，所以需要先安装 python
+    - 直接 fish 一把梭，注意 `fish_config` 的 webui 依赖 python，所以需要先安装 python
 
 - SSH
 
     - 注意 termux ssh 的监听端口默认为 8022 而不是 22
+
+- 后台运行
+
+    - 注意安卓会杀掉长期不活动的后台应用，小心滚到一半安卓把 termux 杀掉了，一定要后台锁定！！！
