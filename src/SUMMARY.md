@@ -16,7 +16,7 @@
 	- [论文总结](./paper/summary.md)
 - [人工智能](./ai/ai.md)
 	- [自然语言处理](./ai/nlp.md)
-- 软件技巧
+- [软件技巧](./software/)
 	- [fish](./software/fish.md)
 	- [chezmoi](./software/chezmoi.md)
 	- [mpv](./software/mpv.md)
