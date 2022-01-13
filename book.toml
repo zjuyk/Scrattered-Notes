@@ -6,4 +6,5 @@ src = "src"
 title = "个人笔记"
 
 [output.html]
+default-theme = "ayu"
 mathjax-support = true
