@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="zh" class="sidebar-visible no-js ayu">
+<html lang="zh" class="sidebar-visible no-js rust">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -32,7 +32,7 @@
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
             var path_to_root = "../";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "ayu";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "rust";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -58,7 +58,7 @@
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
             html.classList.remove('no-js')
-            html.classList.remove('ayu')
+            html.classList.remove('rust')
             html.classList.add(theme);
             html.classList.add('js');
         </script>
@@ -96,10 +96,10 @@
                         </button>
                         <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
                             <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust (default)</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
                         </ul>
                         <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
                             <i class="fa fa-search"></i>
@@ -111,6 +111,12 @@
                     <div class="right-buttons">
                         <a href="../print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/zjuyk/Scrattered-Notes" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/zjuyk/Scrattered-Notes/edit/master/src/program/python.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
                         </a>
                     </div>
                 </div>
@@ -169,8 +175,8 @@ trusted-host=mirrors.aliyun.com
 <p>注意内置的 pow 和 math 库里的 pow 接收的参数是不一样的，前者可以接受 3 个参数</p>
 <h2 id="小片段功能代码"><a class="header" href="#小片段功能代码">小片段功能代码</a></h2>
 <ul>
-<li>生成固定长度随机字符串密码</li>
-</ul>
+<li>
+<p>生成固定长度随机字符串密码</p>
 <pre><code class="language-python">import random
 import string
 def random_str(length=8):
@@ -186,9 +192,9 @@ def random_str(randomlength=8):
         str+=chars[random.randint(0, length)]
     return str
 </code></pre>
-<ul>
-<li>二进制字符串转普通字符串</li>
-</ul>
+</li>
+<li>
+<p>二进制字符串转普通字符串</p>
 <p>每 8 个分成一组，用 int 转 10 进制，再用 chr 转为 ascii 字符</p>
 <pre><code class="language-python">s=&quot;0110001101111001&quot;
 ans=&quot;&quot;
@@ -201,9 +207,9 @@ for i in range(0,len(s)//8):
 s=&quot;0110001101111001&quot;
 ans=binascii.unhexlify('%x'%int(s,2)).decode()
 </code></pre>
-<ul>
-<li>符号数与无符号数转换</li>
-</ul>
+</li>
+<li>
+<p>符号数与无符号数转换</p>
 <p>无符号 -&gt; 有符号</p>
 <pre><code class="language-python">import ctypes
 ctypes.c_int64(17039472050328044269).value
@@ -212,9 +218,9 @@ ctypes.c_int64(17039472050328044269).value
 <pre><code class="language-python">import ctypes
 ctypes.c_uint64(-1407272023381507347).value
 </code></pre>
-<ul>
-<li>捕捉输入的 Ctrl+C</li>
-</ul>
+</li>
+<li>
+<p>捕捉输入的 Ctrl+C</p>
 <p>很邪恶的屏蔽用户输入 Ctrl+C 的做法</p>
 <pre><code class="language-python">import signal
 
@@ -227,9 +233,9 @@ if __name__ == '__main__':
     signal.signal(signal.SIGINT, signal_handler)
     sleep(666)
 </code></pre>
-<ul>
-<li>AES 加密字符串</li>
-</ul>
+</li>
+<li>
+<p>AES 加密字符串</p>
 <p>加密</p>
 <pre><code class="language-python">plaintext = &quot;hello world&quot;
 
@@ -248,6 +254,8 @@ plaintext = aes.decrypt(base64.b64decode(encrypted_text)).decode()
 
 print(plaintext) # hello world
 </code></pre>
+</li>
+</ul>
 
                     </main>
 
@@ -278,6 +286,11 @@ print(plaintext) # hello world
         <script type="text/javascript">
             window.playground_copyable = true;
         </script>
+        <script src="../ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mode-rust.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../theme-dawn.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
         <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>

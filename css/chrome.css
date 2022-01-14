@@ -4,9 +4,11 @@
 
 ::-webkit-scrollbar {
     background: var(--bg);
+    width: 12px;
 }
 ::-webkit-scrollbar-thumb {
     background: var(--scrollbar);
+    border-radius: 5px;
 }
 html {
     scrollbar-color: var(--scrollbar) var(--bg);
