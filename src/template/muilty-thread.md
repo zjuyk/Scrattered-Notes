@@ -1,4 +1,4 @@
-# Muilty Thread
+### 多线程模板
 
 ```python
 import threading

@@ -6,5 +6,10 @@ src = "src"
 title = "个人笔记"
 
 [output.html]
-default-theme = "ayu"
+default-theme = "rust"
 mathjax-support = true
+git-repository-url = "https://github.com/zjuyk/Scrattered-Notes"
+edit-url-template = "https://github.com/zjuyk/Scrattered-Notes/edit/master/{path}"
+
+[output.html.playpen]
+editable = true
